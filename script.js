@@ -7,6 +7,10 @@ class Animal {
   getInfo() {
     return `The name of the animal is ${this.name} and age is ${this.age}`
   }
+
+  makeSound() {
+    return 'Some random sounds'
+  }
 }
 
 class Dog extends Animal {
@@ -16,6 +20,10 @@ class Dog extends Animal {
   }
 
   bark() {
+    return 'woof'
+  }
+
+  makeSound() {
     return 'woof'
   }
 }
@@ -34,6 +42,10 @@ class Cat extends Animal {
   setWeight(weight) {
     this.#weight = weight
   }
+
+  makeSound() {
+    return 'meow'
+  }
 }
 
 const dog = new Dog('Rex', 2, 'German Shepherd')
@@ -48,3 +60,12 @@ console.log(cat.getWeight()) // 5kg
 
 cat.setWeight('6kg')
 console.log(cat.getWeight()) // 6kg
+
+const animal = new Animal('Animal', 10)
+const dog2 = new Dog('Rex', 2, 'German Shepherd')
+const cat2 = new Cat('Whiskers', 5, '5kg')
+
+console.log(dog2.makeSound()) // woof
+console.log(cat2.makeSound()) // meow
+console.log(animal, 'animal')
+console.log(animal.makeSound()) // Some random sounds
