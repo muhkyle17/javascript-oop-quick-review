@@ -9,5 +9,25 @@ class Animal {
   }
 }
 
-const newClass = new Animal('what', 'hello')
-console.log(newClass.getInfo(), 'newClass')
+class Dog extends Animal {
+  constructor(name, age, breed) {
+    super(name, age)
+    this.breed = breed
+  }
+
+  bark() {
+    return 'woof'
+  }
+}
+
+class Cat extends Animal {
+  constructor(name, age, weight) {
+    super(name, age)
+    this.weight = weight
+  }
+}
+
+const dog = new Dog('Rex', 2, 'German Shepherd')
+console.log(dog.getInfo())
+console.log(dog.breed)
+console.log(dog.bark())
